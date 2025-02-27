@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  whatsappbot:
+    image: whatsappbot:v1
+    platform: linux/amd64
+    container_name: whatsappbot
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./data:/app/data
