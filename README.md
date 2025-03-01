@@ -68,21 +68,21 @@ services:
 
 ---
 
-## 🔧 API Usage (Send OTP)
+## 🔧 API Usage (Send Message)
 
 Once the bot is running, **you can send messages via API**:
 
 ### **Request**
 ```sh
-curl -X POST "http://localhost:9090/send-otp" \
+curl -X POST "http://localhost:9090/send-message" \
      -H "Content-Type: application/json" \
-     -d '{"phone": "491234567890", "otp": "123456"}'
+     -d '{"phone": "491234567890", "message": "123456"}'
 ```
 
 ### **Response**
 ```json
 {
-  "message": "OTP sent successfully"
+  "message": "Message sent successfully"
 }
 ```
 

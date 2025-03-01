@@ -7,19 +7,19 @@ import (
 	"net/http"
 )
 
-type OTPRequest struct {
+type MRequest struct {
 	Phone   string `json:"phone"`
 	Message string `json:"message"`
 }
 
 func StartServer(bot *Bot) {
-	http.HandleFunc("/send-otp", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/send-message", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
 			http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
 			return
 		}
 
-		var req OTPRequest
+		var req MRequest
 		err := json.NewDecoder(r.Body).Decode(&req)
 		if err != nil {
 			http.Error(w, "Invalid request body", http.StatusBadRequest)
@@ -33,7 +33,7 @@ func StartServer(bot *Bot) {
 		}
 
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("OTP sent successfully"))
+		w.Write([]byte("Message sent successfully"))
 	})
 
 	fmt.Println("Starting HTTP server on :9090...")
