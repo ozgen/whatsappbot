@@ -3,11 +3,10 @@ module github.com/ozgen/whatsappbot
 go 1.23.5
 
 require (
-	github.com/golang/mock v1.6.0
 	github.com/mattn/go-sqlite3 v1.14.24
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 	go.mau.fi/whatsmeow v0.0.0-20250225112721-b7530f3a5056
-	google.golang.org/protobuf v1.36.5
+	google.golang.org/protobuf v1.36.6
 )
 
 require (
